@@ -127,7 +127,7 @@ const switchs = {
         }
         catch (ex) { }
       } else {
-        this.process = spawn("mplayer", ['music/stars_wars_main.mp3'], {detached: true, stdio:'ignore'});
+        this.process = spawn("mplayer", ['music/stars_wars_main.wav'], {detached: true, stdio:'ignore'});
       }
     }
   },
