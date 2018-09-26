@@ -1,7 +1,5 @@
 'use strict';
 
-const player = require('play-sound')();
-
 const Gpio = require('onoff').Gpio;
 
 const spawn = require('child_process').spawn;
@@ -9,6 +7,7 @@ const spawn = require('child_process').spawn;
 const record = require('node-record-lpcm16');
 const Speaker = require('speaker');
 const path = require('path');
+const fs = require('fs');
 const GoogleAssistant = require('google-assistant');
 const speakerHelper = require('./speaker-helper');
 
@@ -20,8 +19,18 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
-
+// Play sound on start
 spawn("play", ['soundFX/R2D2.wav'], {detached: true});
+
+// Get all voices FX
+var voicesFX = [];
+
+fs.readdir('soundFX/voicesFX/', (err, files) => {
+  files.forEach(file => {
+    voicesFX.push('soundFX/voicesFX/' + file);
+  });
+})
+
 
 /**
 * GPIO used :
@@ -104,7 +113,8 @@ const switchs = {
   'greenBtn1' : {
     'pin' : 25,
     'onpress' : function() {
-      spawn("play", ['soundFX/chewy_roar.wav']);
+	    var sound = voicesFX[Math.floor(Math.random()*voicesFX.length)];
+      spawn("play", [sound]);
     }
   },
   'yellowBtn1' : {
