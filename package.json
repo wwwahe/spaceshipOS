@@ -4,13 +4,13 @@
   "description": "The nodeJS code of my son's spaceship made for rasperyPI",
   "main": "app.js",
   "dependencies": {
-    "google-assistant": "^0.2.2",
-    "gpio": "^0.2.7",
-    "node-record-lpcm16": "^0.3.0",
-    "onoff": "^1.1.9",
+    "google-assistant": "^0.5.2",
+    "gpio": "^0.2.9",
+    "node-record-lpcm16": "^0.3.1",
+    "onoff": "^1.2.0",
+    "pigpio": "^0.6.4",
     "play-sound": "^1.1.2",
-    "speaker": "^0.4.0",
-    "pigpio": "^0.6.4"
+    "speaker": "^0.4.1"
   },
   "devDependencies": {},
   "scripts": {
