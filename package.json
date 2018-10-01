@@ -1,5 +1,5 @@
 {
-  "name": "navetteOS",
+  "name": "spaceshipOS",
   "version": "1.0.0",
   "description": "The nodeJS code of my son's spaceship made for rasperyPI",
   "main": "app.js",
